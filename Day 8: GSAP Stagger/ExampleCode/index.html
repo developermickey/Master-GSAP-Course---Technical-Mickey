@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Stagger Animation - Menu Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 40px 60px;
+            background: rgba(67, 67, 67, 0.721);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu li {
+            font-size: 22px;
+            margin: 18px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="menu">
+        <li>🏠 Home</li>
+        <li>ℹ️ About</li>
+        <li>🛠 Services</li>
+        <li>📂 Portfolio</li>
+        <li>📞 Contact</li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // Stagger Animation
+        gsap.to(".menu li", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+
+</html>

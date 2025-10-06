@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Timeline Basics</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 60px;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #ff0080;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>Welcome to GSAP</h1>
+        <p>Powerful animations for modern websites</p>
+        <button>Get Started</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        let tl = gsap.timeline();
+
+        tl.to("h1", { opacity: 1, y: 0, duration: 1, ease: "power3.out" })
+            .to("p", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.5")
+            .to("button", {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "back.out(1.7)",
+            });
+    </script>
+</body>
+
+</html>

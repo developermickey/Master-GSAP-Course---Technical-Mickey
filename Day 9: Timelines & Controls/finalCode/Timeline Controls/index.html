@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Timeline Controls</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(120deg, #000000, #252525);
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .controls button:hover {
+            background: white;
+            color: #dd2476;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="controls">
+        <button onclick="tl.play()">▶ Play</button>
+        <button onclick="tl.pause()">⏸ Pause</button>
+        <button onclick="tl.reverse()">⏪ Reverse</button>
+        <button onclick="tl.restart()">🔄 Restart</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        let tl = gsap.timeline({ paused: true });
+
+        tl.to(".box", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out"
+        })
+            .to(".box", {
+                x: 200,
+                duration: 1,
+                ease: "power2.inOut"
+            })
+            .to(".box", {
+                y: -100,
+                duration: 1,
+                ease: "bounce.out"
+            });
+    </script>
+</body>
+
+</html>

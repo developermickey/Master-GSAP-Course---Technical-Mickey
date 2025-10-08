@@ -11,7 +11,7 @@
 body {
 	margin: 0;
 	color: #d8d2cd;
-	background-color:#111;
+	background-color: #111;
 	font-family: grotesk, sans-serif;
 	text-transform: uppercase;
 }
@@ -20,14 +20,14 @@ body {
 	position: relative;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(8,1fr);
+	grid-template-columns: repeat(8, 1fr);
 }
 
 .grid {
 	position: relative;
 	will-change: transform;
-	grid-column: var(--c);
-	grid-row: var(--r);
+	grid-column: var(--col);
+	grid-row: var(--row);
 }
 
 .grid-img {
@@ -72,6 +72,3 @@ body {
 	margin: 0;
 	color: #d8d2cd;
 }
-
-
-
